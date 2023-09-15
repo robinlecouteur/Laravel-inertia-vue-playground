@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('vessels', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->magellanGeometryCollection('geozone', 4326);
         });
     }
 
@@ -23,5 +24,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('vessels');
+       
     }
 };

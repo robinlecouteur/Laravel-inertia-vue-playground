@@ -5,6 +5,7 @@ use \App\Models\User;
 use Illuminate\Support\Str;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\VesselSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,6 +26,8 @@ class DatabaseSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]
     );
-    
+
+    $this->call(VesselSeeder::class);
+
     }
 }
